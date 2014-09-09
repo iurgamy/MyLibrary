@@ -1,4 +1,0 @@
-MyLibrary
-=========
-
-Book library
