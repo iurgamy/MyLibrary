@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.6" icons="false" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true">  
+  <class id="1" language="java" name="com.epam.library.entity.Client" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/Client.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="856" y="351"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.epam.library.entity.Order" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/Order.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="856" y="275"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.epam.library.entity.SubscriptionItem" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/SubscriptionItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="216" y="275"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.epam.library.entity.Subscription" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/Subscription.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="506" y="275"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.epam.library.entity.OrderItem" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/OrderItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="1196" y="275"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.epam.library.entity.User" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="1417" y="275"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="com.epam.library.entity.IDefault" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/IDefault.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="986" y="427"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="com.epam.library.entity.Book" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/entity/Book.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="109" x="707" y="351"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="9" language="java" name="com.epam.library.dao.ISubscriptionItemDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/ISubscriptionItemDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="133" x="62" y="199"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="10" language="java" name="com.epam.library.dao.ISubscriptionDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/ISubscriptionDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="108" x="293" y="199"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="11" language="java" name="com.epam.library.dao.IOrderItemDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/IOrderItemDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="100" x="1196" y="199"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <class id="12" language="java" name="com.epam.library.dao.AbstractDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/AbstractDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="106" x="1134" y="37"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="13" language="java" name="com.epam.library.dao.IGenericDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/IGenericDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="101" x="1738" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="14" language="java" name="com.epam.library.dao.IBookDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/IBookDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="100" x="495" y="199"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="15" language="java" name="com.epam.library.dao.IOrderDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/IOrderDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="100" x="856" y="199"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="16" language="java" name="com.epam.library.dao.IClientDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/IClientDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="100" x="635" y="199"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="17" language="java" name="com.epam.library.dao.IUserDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/IUserDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="100" x="1417" y="199"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <interface id="18" language="java" name="com.epam.library.dao.IDAOFactory" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/dao/IDAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="100" x="514" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </interface>  
+  <class id="19" language="java" name="com.epam.library.datasource.mysql.MySQLOrderItemDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLOrderItemDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="1317" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.epam.library.datasource.mysql.MySQLSubscriptionItemDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLSubscriptionItemDAO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="36" width="170" x="62" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.epam.library.datasource.mysql.MySQLDAOFactory" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLDAOFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="675" y="37"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.epam.library.datasource.mysql.MySQLUsersDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLUsersDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="1538" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.epam.library.datasource.mysql.MySQLOrderDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLOrderDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="1096" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.epam.library.datasource.mysql.MySQLDataSource" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLDataSource.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="253" y="37"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.epam.library.datasource.mysql.MySQLClientDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLClientDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="896" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.epam.library.datasource.mysql.MySQLSubscriptionDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLSubscriptionDAO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="293" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.epam.library.datasource.mysql.MySQLBookDAO" project="MyLibrary" 
+    file="/MyLibrary/src/com/epam/library/datasource/mysql/MySQLBookDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="36" width="160" x="675" y="123"/>    
+    <display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" accessors="true" 
+      visibility="false">      
+      <attributes public="false" package="false" protected="false" private="false" static="false"/>      
+      <operations public="false" package="false" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <generalization id="28">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="29">    
+    <bendpoint x="865" y="123"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <realization id="30">    
+    <bendpoint x="610" y="351"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="32">    
+    <bendpoint x="1547" y="199"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="33">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="34">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="35" name="subscriptionItems"/>      
+      <multiplicity id="36" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <realization id="38">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <realization id="39">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <dependency id="40">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="41">    
+    <bendpoint x="645" y="275"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="42">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="43">    
+    <bendpoint x="644" y="123"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <realization id="44">    
+    <bendpoint x="676" y="351"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <dependency id="45">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="46">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <association id="47">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="48" name="client"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="50">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <realization id="51">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <realization id="52">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="53">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="54" name="mySqlDataSource"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="58">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="59">    
+    <bendpoint x="995" y="199"/>    
+    <bendpoint x="995" y="275"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <realization id="60">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <dependency id="61">    
+    <bendpoint x="431" y="199"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="62">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="63">    
+    <bendpoint x="262" y="123"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="64">    
+    <bendpoint x="1286" y="123"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="65">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="68">    
+    <bendpoint x="1507" y="123"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="69">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <realization id="71">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <dependency id="72">    
+    <bendpoint x="31" y="123"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <realization id="73">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <dependency id="74">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <realization id="75">    
+    <bendpoint x="1100" y="351"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <dependency id="76">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="77">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="78">    
+    <bendpoint x="786" y="275"/>    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="79">    
+    <bendpoint x="1326" y="199"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <realization id="81">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <dependency id="82">    
+    <bendpoint x="483" y="123"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <dependency id="83">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <realization id="84">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <dependency id="85">    
+    <bendpoint x="1869" y="123"/>    
+    <bendpoint x="1869" y="199"/>    
+    <bendpoint x="1869" y="275"/>    
+    <bendpoint x="1869" y="351"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="86">    
+    <bendpoint x="225" y="199"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="87">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="88" name="orderItems"/>      
+      <multiplicity id="89" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="90">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <dependency id="91">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="92">    
+    <bendpoint x="1016" y="199"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <realization id="93">    
+    <bendpoint x="1211" y="351"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <dependency id="94">    
+    <bendpoint x="765" y="199"/>    
+    <bendpoint x="765" y="275"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <realization id="95">    
+    <bendpoint x="995" y="351"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <realization id="96">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <generalization id="97">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="98">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="false" package="true" initial-value="false" signature="false" 
+    accessors="true" visibility="false">    
+    <attributes public="false" package="false" protected="false" private="false" static="false"/>    
+    <operations public="false" package="false" protected="false" private="false" static="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
