@@ -3,8 +3,8 @@ MyLibrary
 
 Book library
 
-create mysql user: iurgamy 
-             password: ghbdtn
+create mysql user: 'iurgamy' 
+             password: 'ghbdtn'
 or update context.xml
              
              
