@@ -4,7 +4,7 @@
         "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
 <log4j:configuration debug="false">
 	<appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="${catalina.base}/logs/MyLibrary.log" />
+		<param name="File" value="${catalina.home}/logs/MyLibrary.log" />
 		<param name="DatePattern" value="'-'yyyy-MM-dd" />
 		<param name="Encoding" value="utf-8" />
 		<layout class="org.apache.log4j.PatternLayout">

@@ -119,7 +119,7 @@ public class MySQLUsersDAO extends AbstractDAO<User> implements IUserDAO {
 				} else
 					flag = true;
 			} else {
-				logger.error("User not found");
+				logger.error("User "+user.getLogin()+" not found");
 			}
 
 		} catch (SQLException e) {
