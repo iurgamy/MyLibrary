@@ -24,21 +24,33 @@ public class SearchCommand implements ICommand {
 					: request.getParameter("author");
 			String year = request.getParameter("year").isEmpty() ? null
 					: request.getParameter("year");
-			Double price = request.getParameter("price").isEmpty() ? null
-					: Double.parseDouble(request.getParameter("price"));
-			Integer count = request.getParameter("count").isEmpty() ? null
-					: Integer.parseInt(request.getParameter("count"));
-			
+			Double price = null;
+			Integer count = null;
+			try {
+				price = request.getParameter("price").isEmpty() ? null
+						: Double.parseDouble(request.getParameter("price"));
+				count = request.getParameter("count").isEmpty() ? null
+						: Integer.parseInt(request.getParameter("count"));
+			} catch (NumberFormatException ex) {
+				logger.severe(ex.getMessage());
+				count = null;
+			}
+
 			StringBuilder sql = new StringBuilder();
 			sql.append("SELECT * FROM BOOKS ");
-			sql.append((id == null) ? ("WHERE ") : ("WHERE ID = " + id + " AND "));
-			sql.append((title == null) ? ("") : (" TITLE = " + "'"+title+"'" + " AND "));
-			sql.append((author == null) ? ("") : (" author = " + "'"+author+"'" + " AND "));
+			sql.append((id == null) ? ("WHERE ")
+					: ("WHERE ID = " + id + " AND "));
+			sql.append((title == null) ? ("") : (" TITLE = " + "'" + title
+					+ "'" + " AND "));
+			sql.append((author == null) ? ("") : (" author = " + "'" + author
+					+ "'" + " AND "));
 			sql.append((year == null) ? ("") : (" year = ? AND "));
 			sql.append((price == null) ? ("") : (" price = " + price + " AND "));
-			sql.append((count == null) ? (" 1=1;") : (" count = " + count + ";"));
-			Date date = year == null? null : DateConvert.convertToYear(year);
-			session.setAttribute("allbooks", Logic.searchBooks(sql.toString(), date));
+			sql.append((count == null) ? (" 1=1;")
+					: (" count = " + count + ";"));
+			Date date = year == null ? null : DateConvert.convertToYear(year);
+			session.setAttribute("allbooks",
+					Logic.searchBooks(sql.toString(), date));
 			session.setAttribute("searchflag", "true");
 
 			return new GetAllBooksCommand().execute(request, response);

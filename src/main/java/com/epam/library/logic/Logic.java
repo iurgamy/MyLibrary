@@ -33,11 +33,15 @@ public class Logic {
 
 	public static boolean login(User user) {
 		Connection connection = dataSource.getConnection();
-		IUserDAO userDAO = factory.getUserDAO(connection);
-		boolean flag = userDAO.checkUser(user);
-		dataSource.closeConnection(connection);
+		if (connection != null) {
+			IUserDAO userDAO = factory.getUserDAO(connection);
+			boolean flag = userDAO.checkUser(user);
+			dataSource.closeConnection(connection);
 
-		return flag;
+			return flag;
+		} else {
+			return false;
+		}
 	}
 
 	public static User createUser(User user) {
@@ -169,17 +173,16 @@ public class Logic {
 		return subItems;
 	}
 
-
-	
 	public static void turnBackSubItem(Integer subItemId) {
 		Connection connection = dataSource.getConnection();
 		ISubscriptionItemDAO subscriptionItemDAO = factory
 				.getSubscriptionItemDAO(connection);
 		IBookDAO bookDAO = factory.getBookDAO(connection);
-		SubscriptionItem subscriptionItem = subscriptionItemDAO.getById(subItemId);
+		SubscriptionItem subscriptionItem = subscriptionItemDAO
+				.getById(subItemId);
 		if (subscriptionItemDAO.delete(subscriptionItem)) {
 			Book book = bookDAO.getById(subscriptionItem.getBookid());
-			book.setCount(book.getCount()+1);
+			book.setCount(book.getCount() + 1);
 			bookDAO.update(book);
 		}
 	}
