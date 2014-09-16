@@ -32,7 +32,7 @@ public class SearchCommand implements ICommand {
 				count = request.getParameter("count").isEmpty() ? null
 						: Integer.parseInt(request.getParameter("count"));
 			} catch (NumberFormatException ex) {
-				logger.severe(ex.getMessage());
+				logger.error(ex.getMessage());
 				count = null;
 			}
 
