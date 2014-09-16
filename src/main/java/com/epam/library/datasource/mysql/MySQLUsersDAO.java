@@ -111,12 +111,16 @@ public class MySQLUsersDAO extends AbstractDAO<User> implements IUserDAO {
 			preparedStatement.setString(1, user.getLogin());
 			preparedStatement.setString(2, user.getPassword());
 			resultSet = preparedStatement.executeQuery();
-			resultSet.next();
 
-			if (resultSet.getInt("ID") == 0) {
-				flag = false;
-			} else
-				flag = true;
+			if (resultSet.next()) {
+
+				if (resultSet.getInt("ID") == 0) {
+					flag = false;
+				} else
+					flag = true;
+			} else {
+				logger.error("User not found");
+			}
 
 		} catch (SQLException e) {
 			logger.error(e.getMessage(), e);

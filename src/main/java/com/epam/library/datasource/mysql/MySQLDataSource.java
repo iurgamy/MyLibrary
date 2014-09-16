@@ -42,6 +42,7 @@ public class MySQLDataSource {
 
 		} catch (NamingException | SQLException e) {
 			logger.severe(e.getMessage());
+			
 		}
 		
 		return connection;

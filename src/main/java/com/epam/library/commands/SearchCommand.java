@@ -27,12 +27,12 @@ public class SearchCommand implements ICommand {
 			Double price = null;
 			Integer count = null;
 			try {
-				price = request.getParameter("price").isEmpty() ? null
-						: Double.parseDouble(request.getParameter("price"));
+				price = request.getParameter("price").isEmpty() ? null : Double
+						.parseDouble(request.getParameter("price"));
 				count = request.getParameter("count").isEmpty() ? null
 						: Integer.parseInt(request.getParameter("count"));
 			} catch (NumberFormatException ex) {
-				logger.error(ex.getMessage());
+				logger.error(ex.getMessage(), ex.getCause());
 				count = null;
 			}
 
