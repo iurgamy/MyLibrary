@@ -21,13 +21,6 @@ public class MySQLDAOFactory implements IDAOFactory {
 	public static Logger logger = Logger.getLogger(MySQLDAOFactory.class
 			.getName());
 
-	// private String url = "jdbc:mysql://localhost/library";
-	// private String user = "root";
-	// private String password = "ghbdtn";
-	// private String driver = "com.mysql.jdbc.Driver";
-
-
-
 	@Override
 	public IBookDAO getBookDAO(Connection connection) {
 		return new MySQLBookDAO(connection);
@@ -44,8 +37,8 @@ public class MySQLDAOFactory implements IDAOFactory {
 	}
 
 	@Override
-	public IUserDAO getUserDAO(Connection connection) {
-		return new MySQLUsersDAO(connection);
+	public IUserDAO getUserDAO() {
+		return new MySQLUsersDAO();
 	}
 
 	@Override

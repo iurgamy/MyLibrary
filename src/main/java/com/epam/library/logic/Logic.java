@@ -32,23 +32,14 @@ public class Logic {
 	public static MySQLDataSource dataSource = MySQLDataSource.getInstance();
 
 	public static boolean login(User user) {
-		Connection connection = dataSource.getConnection();
-		if (connection != null) {
-			IUserDAO userDAO = factory.getUserDAO(connection);
-			boolean flag = userDAO.checkUser(user);
-			dataSource.closeConnection(connection);
-
-			return flag;
-		} else {
-			return false;
-		}
+		IUserDAO userDAO = factory.getUserDAO();
+		boolean flag = userDAO.checkUser(user);
+		return flag;
 	}
 
 	public static User createUser(User user) {
-		Connection connection = dataSource.getConnection();
-		IUserDAO userDAO = factory.getUserDAO(connection);
+		IUserDAO userDAO = factory.getUserDAO();
 		user = userDAO.create(user);
-		dataSource.closeConnection(connection);
 		return user;
 	}
 
@@ -62,7 +53,6 @@ public class Logic {
 
 	public static void addBook(Book book) {
 		Connection connection = dataSource.getConnection();
-
 		IBookDAO bookDAO = factory.getBookDAO(connection);
 		Book chechbook = bookDAO.getByAllData(book);
 		if (chechbook == null) {
@@ -113,17 +103,13 @@ public class Logic {
 	}
 
 	public static void addUser(User user) {
-		Connection connection = dataSource.getConnection();
-		IUserDAO userDAO = factory.getUserDAO(connection);
+		IUserDAO userDAO = factory.getUserDAO();
 		userDAO.create(user);
-		dataSource.closeConnection(connection);
 	}
 
 	public static User getUserByLogin(User user) {
-		Connection connection = dataSource.getConnection();
-		IUserDAO userDAO = factory.getUserDAO(connection);
+		IUserDAO userDAO = factory.getUserDAO();
 		user = userDAO.getByLogin(user.getLogin());
-		dataSource.closeConnection(connection);
 		return user;
 	}
 

@@ -4,15 +4,11 @@ import java.sql.Connection;
 
 public interface IDAOFactory {
 
-	//public Connection getConnection();
-	
-	//public void closeConnection();
-
 	public IBookDAO getBookDAO(Connection connection);
 
 	public IClientDAO getClientDAO(Connection connection);
 	
-	public IUserDAO getUserDAO(Connection connection);
+	public IUserDAO getUserDAO();
 
 	public IOrderDAO getOrderDAO(Connection connection);
 	

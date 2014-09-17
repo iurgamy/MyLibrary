@@ -1,171 +1,165 @@
 package com.epam.library.datasource.mysql;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
-import com.epam.library.dao.AbstractDAO;
+import org.apache.log4j.Logger;
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import com.epam.library.dao.IUserDAO;
 import com.epam.library.entity.User;
+import com.epam.library.utils.HibernateUtil;
 
-public class MySQLUsersDAO extends AbstractDAO<User> implements IUserDAO {
+public class MySQLUsersDAO implements IUserDAO {
+	public static Logger logger = Logger.getLogger(MySQLUsersDAO.class
+			.getName());
 
-	private Connection connection;
-
-	public MySQLUsersDAO(Connection connection) {
-		super(connection);
-		this.connection = connection;
-		// TODO Auto-generated constructor stub
-	}
-
-	protected String getCheckUserQuery() {
-		return "SELECT ID FROM USERS WHERE LOGIN = ? AND PASSWORD = ?";
-	}
-
-	@Override
-	protected String getSelectQuery() {
-		// TODO Auto-generated method stub
-		return "SELECT ID, LOGIN, PASSWORD FROM USERS ";
-	}
-
-	@Override
-	protected String getCreateQuery() {
-		// TODO Auto-generated method stub
-		return "INSERT INTO USERS (LOGIN, PASSWORD) \n" + "VALUES (?,?);";
-	}
-
-	@Override
-	protected String getUpdateQuery() {
-		// TODO Auto-generated method stub
-		return "UPDATE USERS \n" + "SET LOGIN = ?, PASSWORD = ? \n"
-				+ "WHERE ID = ?;";
-	}
-
-	@Override
-	protected String getDeleteQuery() {
-		// TODO Auto-generated method stub
-		return "DELETE FROM USERS WHERE ID = ?;";
-	}
-
-	@Override
-	protected List<User> parseResultSet(ResultSet resultSet) {
-		// TODO Auto-generated method stub
-		List<User> result = new ArrayList<>();
-		try {
-			while (resultSet.next()) {
-				User user = new User();
-				user.setId(resultSet.getInt("ID"));
-				user.setLogin(resultSet.getString("LOGIN"));
-				user.setPassword(resultSet.getString("PASSWORD"));
-				result.add(user);
-
-			}
-		} catch (SQLException e) {
-			logger.error(e.getMessage(), e);
-		}
-		return result;
-
-	}
-
-	@Override
-	protected void prepareStatementForInsert(
-			PreparedStatement preparedStatement, User object) {
-		// TODO Auto-generated method stub
-		try {
-
-			preparedStatement.setString(1, object.getLogin());
-			preparedStatement.setString(2, object.getPassword());
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			logger.error(e.getMessage(), e);
-		}
-
-	}
-
-	@Override
-	protected void prepareStatementForUpdate(
-			PreparedStatement preparedStatement, User object) {
-		// TODO Auto-generated method stub
-		try {
-
-			preparedStatement.setString(1, object.getLogin());
-			preparedStatement.setString(2, object.getPassword());
-			preparedStatement.setInt(3, object.getId());
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			logger.error(e.getMessage(), e);
-		}
+	public MySQLUsersDAO() {
 	}
 
 	public boolean checkUser(User user) {
-		String sql = getCheckUserQuery();
-		ResultSet resultSet = null;
-		boolean flag = false;
-		try (PreparedStatement preparedStatement = connection
-				.prepareStatement(sql)) {
-			preparedStatement.setString(1, user.getLogin());
-			preparedStatement.setString(2, user.getPassword());
-			resultSet = preparedStatement.executeQuery();
+		Session session = null;
 
-			if (resultSet.next()) {
-
-				if (resultSet.getInt("ID") == 0) {
-					flag = false;
-				} else
-					flag = true;
-			} else {
-				logger.error("User "+user.getLogin()+" not found");
-			}
-
-		} catch (SQLException e) {
-			logger.error(e.getMessage(), e);
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			Query query = session.getNamedQuery("User.findByLoginAndPassword")
+					.setParameter("login", user.getLogin())
+					.setParameter("password", user.getPassword());
+			user = (User) query.list().iterator().next();
+			session.getTransaction().commit();
+		} catch (Exception ex) {
+			logger.error("User '" + user.getLogin() + "' not found");
 		} finally {
-			try {
-				resultSet.close();
-			} catch (SQLException e) {
-				logger.error(e.getMessage(), e);
+			if (session != null && session.isOpen()) {
+				session.close();
 			}
+
 		}
-		return flag;
+		if (user.getId() != null) {
+			return true;
+		} else {
+
+			return false;
+		}
 
 	}
 
 	@Override
 	public User getByLogin(String login) {
-		List<User> list = null;
-		String sql = getSelectQuery();
-		sql += " WHERE LOGIN = ?;";
-		ResultSet resultSet = null;
-		try (PreparedStatement preparedStatement = connection
-				.prepareStatement(sql)) {
-			preparedStatement.setString(1, login);
-			resultSet = preparedStatement.executeQuery();
-			list = parseResultSet(resultSet);
-
-		} catch (SQLException e) {
-			logger.error(e.getMessage(), e);
+		Session session = null;
+		User user = null;
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			Query query = session.getNamedQuery("User.findByLogin")
+					.setParameter("login", login);
+			user = (User) query.list().iterator().next();
+			session.getTransaction().commit();
+		} catch (Exception ex) {
+			logger.error(ex.getMessage());
 		} finally {
-			try {
-				resultSet.close();
-			} catch (SQLException e) {
-				logger.error(e.getMessage(), e);
+			if (session != null && session.isOpen()) {
+				session.close();
+			}
+
+		}
+		return user;
+
+	}
+
+	public User create(User user) {
+		Session session = null;
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			session.save(user);
+			session.getTransaction().commit();
+		} catch (Exception ex) {
+			logger.error(ex.getMessage());
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
 			}
 		}
+		return user;
+	}
 
-		if (list == null || list.size() == 0) {
-			return null;
+	@Override
+	public User getById(Integer id) {
+		Session session = null;
+		User user = null;
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			user = (User) session.load(User.class, id);
+			session.getTransaction().commit();
+		} catch (Exception ex) {
+			logger.error(ex.getMessage());
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
+			}
 		}
+		return user;
 
-		if (list.size() > 1) {
-			logger.error("Received more than one record from db");
+	}
 
+	@Override
+	public void update(User user) {
+		Session session = null;
+
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			session.update(user);
+			session.getTransaction().commit();
+		} catch (Exception ex) {
+			logger.error(ex.getMessage());
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
+			}
 		}
-		return list.iterator().next();
+	}
+
+	@Override
+	public boolean delete(User user) {
+		Session session = null;
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			session.delete(user);
+			session.getTransaction().commit();
+		} catch (Exception ex) {
+			logger.error(ex.getMessage());
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
+			}
+		}
+		return true;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> getAll() {
+		Session session = null;
+		List<User> users = null;
+		try {
+			session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			Query query = session.getNamedQuery("User.findAll");
+			users = query.list();
+			session.getTransaction().commit();
+		} catch (Exception ex) {
+			logger.error(ex.getMessage());
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
+			}
+		}
+		return users;
 	}
 
 }

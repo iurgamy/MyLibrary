@@ -2,17 +2,38 @@ package com.epam.library.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+
+@Entity
+@Table(name= "USERS")
+@NamedQueries({
+    @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
+    @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id"),
+    @NamedQuery(name = "User.findByLogin", query = "SELECT u FROM User u WHERE u.login = :login"),
+    @NamedQuery(name = "User.findByLoginAndPassword", query = "SELECT u FROM User u WHERE u.login = :login and u.password = :password"),
+    @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")})
 public class User implements IDefault, Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -95811104932733232L;
+    @Id
+    @Column(name= "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String login;
-	private String password;
+    @Column(name= "login", length=255)
+    private String login;
+    @Column(name= "password", length=255)
+    private String password;
 	
 	public User() {
-		// TODO Auto-generated constructor stub
 	}
 	
 
