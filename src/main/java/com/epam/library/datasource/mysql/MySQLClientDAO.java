@@ -45,7 +45,7 @@ public class MySQLClientDAO implements IClientDAO {
 		try {
 			session = HibernateUtil.getSessionFactory().openSession();
 			session.beginTransaction();
-			Query query = session.getNamedQuery("Client.findById");
+			Query query = session.getNamedQuery("Client.findById").setParameter("id", id);
 			client = (Client) query.list().iterator().next();
 			session.getTransaction().commit();
 		} catch (Exception ex) {
