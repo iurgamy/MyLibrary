@@ -6,7 +6,7 @@ public interface IDAOFactory {
 
 	public IBookDAO getBookDAO(Connection connection);
 
-	public IClientDAO getClientDAO(Connection connection);
+	public IClientDAO getClientDAO();
 	
 	public IUserDAO getUserDAO();
 

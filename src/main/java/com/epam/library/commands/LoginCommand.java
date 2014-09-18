@@ -22,16 +22,11 @@ public class LoginCommand implements ICommand {
 		if (Logic.login(user)) {
 			user = Logic.getUserByLogin(user);
 			session.setAttribute("user", user);
-			//Controller.user = user;
 			Client client = Logic.getClientByUser(user);
 			if (client != null) {
 				session.setAttribute("client", client);
-				//Controller.client = client;
-				//request.setAttribute("activeclient", client);
 				Order order = Logic.getOrderOpen(client.getId());
 				session.setAttribute("order", order);
-				//Controller.order = order;
-				//request.setAttribute("activeorder", order);
 
 				return new GetAllBooksCommand().execute(request, response);
 			}

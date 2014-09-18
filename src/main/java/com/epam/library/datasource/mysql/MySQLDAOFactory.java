@@ -27,8 +27,8 @@ public class MySQLDAOFactory implements IDAOFactory {
 	}
 
 	@Override
-	public IClientDAO getClientDAO(Connection connection) {
-		return new MySQLClientDAO(connection);
+	public IClientDAO getClientDAO() {
+		return new MySQLClientDAO();
 	}
 
 	@Override

@@ -35,7 +35,7 @@ public class CreateUserCommand implements ICommand {
 							.withBirthday(
 									DateConvert.convertToDate(request
 											.getParameter("birthday")))
-							.withUserId(user.getId()).build();
+							.withUserId(user).build();
 
 					client = Logic.createClient(client);
 

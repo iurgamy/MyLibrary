@@ -44,6 +44,12 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.3.6.Final</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.6.Final</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -55,13 +61,13 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			 <plugin>
-            			<groupId>org.apache.maven.plugins</groupId>
-            			<artifactId>maven-war-plugin</artifactId>
-            			<configuration>
-                			<outputDirectory>${catalina.base}/webapps/</outputDirectory>
-            			</configuration>
-        		</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${CATALINA.BASE}/webapps/</outputDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

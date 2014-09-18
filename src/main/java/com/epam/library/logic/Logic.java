@@ -44,10 +44,8 @@ public class Logic {
 	}
 
 	public static Client createClient(Client client) {
-		Connection connection = dataSource.getConnection();
-		IClientDAO clientDAO = factory.getClientDAO(connection);
+		IClientDAO clientDAO = factory.getClientDAO();
 		client = clientDAO.create(client);
-		dataSource.closeConnection(connection);
 		return client;
 	}
 
@@ -114,25 +112,18 @@ public class Logic {
 	}
 
 	public static void addClient(Client client) {
-		Connection connection = dataSource.getConnection();
-		IClientDAO clientDAO = factory.getClientDAO(connection);
+		IClientDAO clientDAO = factory.getClientDAO();
 		clientDAO.create(client);
-		dataSource.closeConnection(connection);
 	}
 
 	public static Client getClientById(Integer id) {
-		Connection connection = dataSource.getConnection();
-		IClientDAO clientDAO = factory.getClientDAO(connection);
+		IClientDAO clientDAO = factory.getClientDAO();
 		Client client = clientDAO.getById(id);
-		dataSource.closeConnection(connection);
 		return client;
 	}
 
 	public static Client getClientByUser(User user) {
-		Connection connection = dataSource.getConnection();
-		IClientDAO clientDAO = factory.getClientDAO(connection);
-		Client client = clientDAO.getByUserId(user.getId());
-		dataSource.closeConnection(connection);
+		Client client = user.getClient();
 		return client;
 	}
 
@@ -140,7 +131,7 @@ public class Logic {
 		Connection connection = dataSource.getConnection();
 		ISubscriptionDAO subscriptionDAO = factory
 				.getSubscriptionDAO(connection);
-		IClientDAO clientDAO = factory.getClientDAO(connection);
+		IClientDAO clientDAO = factory.getClientDAO();
 		Subscription subscription = new Subscription();
 		subscription.setClientid(client.getId());
 		client.setSubscriptionid(subscriptionDAO.create(subscription).getId());
@@ -258,7 +249,7 @@ public class Logic {
 	public static void orderToSubscription(Order order, String type) {
 		Connection connection = dataSource.getConnection();
 		Integer subscriptionid = null;
-		IClientDAO clientDAO = factory.getClientDAO(connection);
+		IClientDAO clientDAO = factory.getClientDAO();
 		IOrderDAO orderDAO = factory.getOrderDAO(connection);
 		ISubscriptionItemDAO subscriptionItemDAO = factory
 				.getSubscriptionItemDAO(connection);

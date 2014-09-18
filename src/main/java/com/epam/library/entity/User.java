@@ -3,6 +3,7 @@ package com.epam.library.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.Column;
@@ -32,6 +33,8 @@ public class User implements IDefault, Serializable {
     private String login;
     @Column(name= "password", length=255)
     private String password;
+    @OneToOne(mappedBy = "user")
+    private Client client;
 	
 	public User() {
 	}
@@ -60,6 +63,16 @@ public class User implements IDefault, Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Client getClient() {
+		return client;
+	}
+
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 
 	@Override
 	public int hashCode() {

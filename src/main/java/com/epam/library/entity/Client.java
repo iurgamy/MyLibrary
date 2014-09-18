@@ -3,31 +3,63 @@ package com.epam.library.entity;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "CLIENTS")
+@NamedQueries({
+		@NamedQuery(name = "Client.findAll", query = "SELECT c FROM Client c"),
+		@NamedQuery(name = "Client.findById", query = "SELECT c FROM Client c WHERE c.id = :id"),
+		@NamedQuery(name = "Client.findBySubscriptionid", query = "SELECT c FROM Client c WHERE c.subscriptionid = :subscriptionid"),
+		@NamedQuery(name = "Client.findByName", query = "SELECT c FROM Client c WHERE c.name = :name"),
+		@NamedQuery(name = "Client.findBySurname", query = "SELECT c FROM Client c WHERE c.surname = :surname"),
+		@NamedQuery(name = "Client.findByBirthday", query = "SELECT c FROM Client c WHERE c.birthday = :birthday") })
 public class Client implements IDefault, Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5437119001928387785L;
+	@Id
+    @Column(name= "ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@Column(name= "SUBSCRIPTIONID")
 	private Integer subscriptionid;
+	@Column(name= "NAME", length=255)
 	private String name;
+	@Column(name= "SURNAME", length=255)
 	private String surname;
-	private Date birthday;
-	private Integer userid;
-	
+	@Column(name= "BIRTHDAY")
+	@Temporal(TemporalType.DATE)
+	private java.util.Date birthday;
+	@JoinColumn(name = "USERID", referencedColumnName = "id")
+    @OneToOne
+	private User user;
+
 	public Client() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Client(Integer id, Integer subscriptionid, String name,
-			String surname, Date birthday, Integer userid) {
+			String surname, Date birthday, User user) {
 		// TODO Auto-generated constructor stub
 		setId(id);
 		setSubscriptionid(subscriptionid);
 		setName(name);
 		setSurname(surname);
 		setBirthday(birthday);
-		setUserid(userid);
+		setUser(user);
 	}
 
 	/**
@@ -93,7 +125,7 @@ public class Client implements IDefault, Serializable {
 	/**
 	 * @return the birthday
 	 */
-	public Date getBirthday() {
+	public java.util.Date getBirthday() {
 		return birthday;
 	}
 
@@ -105,12 +137,12 @@ public class Client implements IDefault, Serializable {
 		this.birthday = birthday;
 	}
 
-	public Integer getUserid() {
-		return userid;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserid(Integer userid) {
-		this.userid = userid;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
@@ -168,7 +200,7 @@ public class Client implements IDefault, Serializable {
 	public String toString() {
 		return "Client [id=" + id + ", subscriptionid=" + subscriptionid
 				+ ", name=" + name + ", surname=" + surname + ", birthday="
-				+ birthday + ", userid=" + userid + "]" + "\n";
+				+ birthday + ", userid=" + user + "]" + "\n";
 	}
 
 }

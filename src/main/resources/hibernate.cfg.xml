@@ -5,9 +5,10 @@
  <session-factory name="MyLibrary">
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <property name="hibernate.connection.password">ghbdtn</property>
-  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/LIBRARY</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/LIBRARY?autoReconnect=true</property>
   <property name="hibernate.connection.username">root</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
   <mapping class="com.epam.library.entity.User"/>
+  <mapping class="com.epam.library.entity.Client"/>
  </session-factory>
 </hibernate-configuration>

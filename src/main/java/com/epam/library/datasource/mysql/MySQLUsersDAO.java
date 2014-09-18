@@ -29,7 +29,7 @@ public class MySQLUsersDAO implements IUserDAO {
 			user = (User) query.list().iterator().next();
 			session.getTransaction().commit();
 		} catch (Exception ex) {
-			logger.error("User '" + user.getLogin() + "' not found");
+			logger.error("User '" + user.getLogin() + "' not found", ex);			
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
